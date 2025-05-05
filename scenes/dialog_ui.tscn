@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbrel1cnnq22l"]
+
+[ext_resource type="Theme" uid="uid://d2k816mby77cu" path="res://new_theme.tres" id="1_ewnsd"]
+[ext_resource type="Script" uid="uid://bicjg4g0tt38e" path="res://scripts/dialog_ui.gd" id="1_yjvli"]
+[ext_resource type="Script" uid="uid://qxwy8bve0ufp" path="res://scenes/text_blip_sound.gd" id="2_edwrk"]
+
+[sub_resource type="Theme" id="Theme_ewnsd"]
+RichTextLabel/font_sizes/normal_font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewnsd"]
+bg_color = Color(0.176471, 0.635294, 0.921569, 0.470588)
+corner_radius_top_right = 50
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_ewnsd"]
+font_size = 32
+
+[node name="DialogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjvli")
+
+[node name="TextBlipSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_edwrk")
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogLine" type="RichTextLabel" parent="DialogBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_ewnsd")
+text = "A line of dialog"
+
+[node name="SpeakerBox" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -174.0
+offset_right = 286.0
+offset_bottom = -134.0
+grow_vertical = 0
+theme = ExtResource("1_ewnsd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewnsd")
+
+[node name="SpeakerName" type="Label" parent="SpeakerBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_ewnsd")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+position = Vector2(-20, -18)
+polygon = PackedVector2Array(0, 0, 40, 20, 0, 40)

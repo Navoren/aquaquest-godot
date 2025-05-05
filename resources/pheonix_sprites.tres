@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://4x71qkp2gvwb"]
+
+[ext_resource type="Texture2D" uid="uid://brk4orc0dtf06" path="res://assets/characters/pheonix/idle-frames/frame_0_delay-3.5s.png" id="1_dq8x6"]
+[ext_resource type="Texture2D" uid="uid://be37fngx2gxhk" path="res://assets/characters/pheonix/idle-frames/frame_1_delay-0.1s.png" id="2_utav2"]
+[ext_resource type="Texture2D" uid="uid://dytlo5u5hncbs" path="res://assets/characters/pheonix/idle-frames/frame_2_delay-0.2s.png" id="3_3g3i4"]
+[ext_resource type="Texture2D" uid="uid://dfx7bu2774wtc" path="res://assets/characters/pheonix/talking-frames/frame_0_delay-0.2s.png" id="4_ont8i"]
+[ext_resource type="Texture2D" uid="uid://ct2ixpsnxtwb8" path="res://assets/characters/pheonix/talking-frames/frame_1_delay-0.2s.png" id="5_47xyc"]
+[ext_resource type="Texture2D" uid="uid://d4l4gbfbey28m" path="res://assets/characters/pheonix/talking-frames/frame_2_delay-0.2s.png" id="6_shv6v"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dq8x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_utav2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3g3i4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ont8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_47xyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_shv6v")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
