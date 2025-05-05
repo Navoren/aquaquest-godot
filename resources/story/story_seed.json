@@ -1,30 +1,25 @@
 [
-  {
-	"speaker": "Phoenix",
-	"text": "The well is drying up fast...",
-	"scene": "village_day"
-  },
-  {
-	"speaker": "Trucy",
-	"text": "Maybe the crops are using too much water.",
-	"scene": "village_day"
-  },
-  {
-	"anchor": "pre_choice",
-	"milestone": "problem_identified"
-  },
-  {
-	"speaker": "Apollo",
-	"text": "We should ask the village elder what changed in the past few years.",
-	"scene": "village_elder_house"
-  },
-  {
-	"speaker": "Phoenix",
-	"text": "Right. Let's gather more info before jumping to conclusions.",
-	"scene": "village_elder_house"
-  },
-  {
-	"anchor": "post_choice",
-	"milestone": "elder_consulted"
-  }
+	{"speaker": "Pheonix", "text": "The well is drying up fast..." },
+	{"speaker": "Trucy", "text": "Maybe the crops are using too much water." },
+	{"speaker": "Pheonix", "text": "Yeah, I guess" },
+	{"choices":
+		[
+			{"text": "Go to well", "goto": "first_choice"},
+			{"text": "Go to authorities", "goto": "second_choice"}	
+		]
+		},
+	{"anchor": "first_choice"},
+	{"speaker": "Pheonix", "text": "We are at the well now." },
+	{"speaker": "Pheonix", "text": "We need to find out how to conserve it, before it’s too late." },
+	{"goto": "end"},
+	
+	{"anchor": "second_choice"},
+	{"speaker": "Pheonix", "text": "We are at authorities" },
+	{"speaker": "Trucy", "text": "We need to find out how to conserve it, before it’s too late." },
+	{"goto": "end"},
+	
+	{"anchor": "end"},
+	{"speaker": "Pheonix", "text": "I guess we need to work on it now"}
+	
+
 ]

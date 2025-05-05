@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbrel1cnnq22l"]
+[gd_scene load_steps=10 format=3 uid="uid://cbrel1cnnq22l"]
 
 [ext_resource type="Theme" uid="uid://d2k816mby77cu" path="res://new_theme.tres" id="1_ewnsd"]
 [ext_resource type="Script" uid="uid://bicjg4g0tt38e" path="res://scripts/dialog_ui.gd" id="1_yjvli"]
 [ext_resource type="Script" uid="uid://qxwy8bve0ufp" path="res://scenes/text_blip_sound.gd" id="2_edwrk"]
+[ext_resource type="PackedScene" uid="uid://b4bfppww2dbfq" path="res://scenes/player_choice.tscn" id="3_avaca"]
+
+[sub_resource type="Theme" id="Theme_edwrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avaca"]
+bg_color = Color(0.473036, 0.632667, 0.662103, 1)
 
 [sub_resource type="Theme" id="Theme_ewnsd"]
+Button/styles/normal = SubResource("StyleBoxFlat_avaca")
 RichTextLabel/font_sizes/normal_font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewnsd"]
@@ -22,11 +29,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_edwrk")
 script = ExtResource("1_yjvli")
 
 [node name="TextBlipSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_edwrk")
+
+[node name="ChoicesContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceList" type="VBoxContainer" parent="ChoicesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Button" parent="ChoicesContainer/ChoiceList" instance=ExtResource("3_avaca")]
+visible = false
+layout_mode = 2
 
 [node name="DialogBox" type="PanelContainer" parent="."]
 layout_mode = 1
